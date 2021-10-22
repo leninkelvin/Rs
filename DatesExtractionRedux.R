@@ -51,7 +51,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
 
     # Now, to separate by ages. Code is cp for casos positivos, then roman numerals for top age.
     
-    cpA = filter(casospos, EDAD <= 10)
+    cpA = filter(casospos, EDAD <= 19)
     cpB = filter(casospos, EDAD >= 20 & EDAD <= 39)
     cpC = filter(casospos, EDAD >= 40 & EDAD <= 59)
     cpD = filter(casospos, EDAD >= 60)
@@ -60,7 +60,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
     
     # Now, to separate by ages. Code is cn for casos negativos, then roman numerals for top age.
     
-    cnA = filter(casosneg, EDAD <= 10)
+    cnA = filter(casosneg, EDAD <= 19)
     cnB = filter(casosneg, EDAD >= 20 & EDAD <= 39)
     cnC = filter(casosneg, EDAD >= 40 & EDAD <= 59)
     cnD = filter(casosneg, EDAD >= 60)
@@ -69,7 +69,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
     
     # Now, to separate by deaths. Code is m for muertes, then roman numerals for top age.
     
-    mA = filter(muertes, EDAD <= 10)
+    mA = filter(muertes, EDAD <= 19)
     mB = filter(muertes, EDAD >= 20 & EDAD <= 39)
     mC = filter(muertes, EDAD >= 40 & EDAD <= 59)
     mD = filter(muertes, EDAD >= 60)
@@ -78,7 +78,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
     
     # Now, to separate by deaths. Code is h for hospitalizados, then roman numerals for top age.
     
-    hA = filter(hospitalizados, EDAD <= 10)
+    hA = filter(hospitalizados, EDAD <= 19)
     hB = filter(hospitalizados, EDAD >= 20 & EDAD <= 39)
     hC = filter(hospitalizados, EDAD >= 40 & EDAD <= 59)
     hD = filter(hospitalizados, EDAD >= 60)
@@ -87,7 +87,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
     
     # Now, to separate by deaths. Code is m for muertes, then roman numerals for top age.
     
-    mnA = filter(muertesneg, EDAD <= 10)
+    mnA = filter(muertesneg, EDAD <= 19)
     mnB = filter(muertesneg, EDAD >= 20 & EDAD <= 39)
     mnC = filter(muertesneg, EDAD >= 40 & EDAD <= 59)
     mnD = filter(muertesneg, EDAD >= 60)
@@ -96,7 +96,7 @@ x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
     
     # Now, to separate by deaths. Code is h for hospitalizados, then roman numerals for top age.
     
-    hnA = filter(hospitalizadosneg, EDAD <= 10)
+    hnA = filter(hospitalizadosneg, EDAD <= 19)
     hnB = filter(hospitalizadosneg, EDAD >= 20 & EDAD <= 39)
     hnC = filter(hospitalizadosneg, EDAD >= 40 & EDAD <= 59)
     hnD = filter(hospitalizadosneg, EDAD >= 60)
