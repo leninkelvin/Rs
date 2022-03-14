@@ -112,4 +112,52 @@ summary(subclass_IV$MOTIVO_EGRESO)
         summary(subclass_IV_II_REF_No$SEXO)
         summary(subclass_IV_II_REF_Si$SEXO)
 
-      
+classother = filter(Mexico, TIPO_INFLUENZA_CONF1 != 35)
+
+positivecas = filter(classother, RESULT_PRUEBA_RAPIDA == 1)
+
+egrepositivecas = filter(positivecas, MOTIVO_EGRESO %in% c(1))
+
+egrepositivecas$PACIENTE = as.factor(egrepositivecas$PACIENTE)
+summary(egrepositivecas$PACIENTE)
+
+egrepositivecas$DOSIS_VAC_COVID19 = as.factor(egrepositivecas$DOSIS_VAC_COVID19)
+subclass_egrepositivecas_none= filter(egrepositivecas, DOSIS_VAC_COVID19 %in% c(0))
+  summary(subclass_egrepositivecas_none$PACIENTE)
+subclass_egrepositivecas_1= filter(egrepositivecas, DOSIS_VAC_COVID19 %in% c(1))
+  summary(subclass_egrepositivecas_1$PACIENTE)
+  
+  subclass_egrepositivecas_1$MARCA_VAC_COVID19 = as.factor(subclass_egrepositivecas_1$MARCA_VAC_COVID19)
+  summary(subclass_egrepositivecas_1$MARCA_VAC_COVID19)
+  
+subclass_egrepositivecas_2= filter(egrepositivecas, DOSIS_VAC_COVID19 %in% c(2))
+  summary(subclass_egrepositivecas_2$PACIENTE)
+  
+  subclass_egrepositivecas_2$MARCA_VAC_COVID19 = as.factor(subclass_egrepositivecas_2$MARCA_VAC_COVID19)
+  summary(subclass_egrepositivecas_2$MARCA_VAC_COVID19)
+
+  DEADpositivecas = filter(positivecas, MOTIVO_EGRESO %in% c(4))
+  DEADpositivecas$PACIENTE = as.factor(DEADpositivecas$PACIENTE)
+  summary(DEADpositivecas$PACIENTE)
+  
+  DEADpositivecas$DOSIS_VAC_COVID19 = as.factor(DEADpositivecas$DOSIS_VAC_COVID19)
+  
+  subclass_DEADpositivecas_none= filter(DEADpositivecas, DOSIS_VAC_COVID19 %in% c(0))
+  subclass_DEADpositivecas_none$PACIENTE = as.factor(subclass_DEADpositivecas_none$PACIENTE)
+  summary(subclass_DEADpositivecas_none$PACIENTE)
+  
+  subclass_DEADpositivecas_1= filter(DEADpositivecas, DOSIS_VAC_COVID19 %in% c(1))
+  subclass_DEADpositivecas_1$PACIENTE = as.factor(subclass_DEADpositivecas_1$PACIENTE)
+  summary(subclass_DEADpositivecas_1$PACIENTE)
+  
+  subclass_DEADpositivecas_1$MARCA_VAC_COVID19 = as.factor(subclass_DEADpositivecas_1$MARCA_VAC_COVID19)
+  summary(subclass_DEADpositivecas_1$MARCA_VAC_COVID19)
+  
+  subclass_DEADpositivecas_2= filter(DEADpositivecas, DOSIS_VAC_COVID19 %in% c(2))
+  subclass_DEADpositivecas_2$PACIENTE = as.factor(subclass_DEADpositivecas_2$PACIENTE)
+  summary(subclass_DEADpositivecas_2$PACIENTE)
+  
+  subclass_DEADpositivecas_2$MARCA_VAC_COVID19 = as.factor(subclass_DEADpositivecas_2$MARCA_VAC_COVID19)
+  summary(subclass_DEADpositivecas_2$MARCA_VAC_COVID19)
+  
+  subclass_DEADpositivecas_2_Si = filter(subclass_DEADpositivecas_2, REF_VAC_COVID19 == "Si")
