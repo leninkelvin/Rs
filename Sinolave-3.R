@@ -37,6 +37,9 @@ bbD = filter(other, EDAD_ANO >= 60)
 DateI = '2020-01-01' # Starting date for the data extraction
 DateF = '2022-03-01' # Final date for data extraction
 
+# SUPER IMPORTANTE PARA TENER BIEN LAS FECHAS
+Mexico$FECHA_INICIO_CUADRO_CLINICO = as.Date(Mexico$FECHA_INICIO_CUADRO_CLINICO, "%d/%m/%Y") 
+
 #Week I
 
 DateN = as.Date(DateI) + 6

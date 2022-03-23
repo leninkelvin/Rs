@@ -2,9 +2,12 @@
 # It will contain commands to process the Mexican COVID-19 database
 # Started on the 20th August 2021.
 
+# update, without prompts for permission/clarification
+update.packages(ask = FALSE)
+
 ptm <- proc.time() # Code to take the starting time of the process
 
-#required libraries
+#required libraries, without these noting works. 
 
 library(dplyr)
 library(ggplot2)
@@ -14,8 +17,8 @@ library(tidyverse)
 #library(hrbrthemes)
 #library(gifski)
 
-DateI = '2020-01-05'
-DateF = '2021-10-22'
+DateI = '2020-01-05' #
+DateF = '2022-03-21' #
 
 # To extract POSITIVE cases we use CLASIFICACION_FINAL 1, 2, and 3
 casospos = filter(x, CLASIFICACION_FINAL %in% c(1,2,3))
@@ -260,6 +263,8 @@ while (DateI < DateF) {
   
   hospitalizadosnegP = data.frame(as.Date(DateI), count(wI_hnA), count(wI_hnB), count(wI_hnC), count(wI_hnD))
   hospitalizadosneg = rbind(hospitalizadosneg, hospitalizadosnegP) # adding observations to dataframe
+  
+  gc()
 }
 
 # Changing columns names to the age groups before saving. 

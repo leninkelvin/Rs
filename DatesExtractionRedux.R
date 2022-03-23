@@ -15,13 +15,13 @@ library(hrbrthemes)
 library(gifski)
 
 DateI = '2020-01-05' # Starting date for the data extraction
-DateF = '2021-10-03' # Final date for data extraction
+DateF = '2022-02-20' # Final date for data extraction
 
 x = filter(XXI_X_XXI, ENTIDAD_RES %in% c(22))
 
           # To extract POSITIVE cases we use CLASIFICACION_FINAL 1, 2, and 3 into casospos dataset
           casospos = filter(x, CLASIFICACION_FINAL %in% c(1,2,3))
-            #AGE histogram composition for casospos datasaet
+            #AGE histogram composition for casospos dataset
             hist(casospos$EDAD, 
             main="Casos positivos extraidos con definicion 1, 2 y 3",
             xlab="Edad",

@@ -14,12 +14,16 @@ library(pastecs)
 #library(hrbrthemes)
 #library(gifski)
 
+
+Mexico$FECHA_INICIO_CUADRO_CLINICO = as.Date(Mexico$FECHA_INICIO_CUADRO_CLINICO, "%d/%m/%Y") 
+# SUPER IMPORTANTE PARA TENER BIEN LAS FECHAS
+
 Mexico$FECHA_INGRESO_UCI = as.factor(Mexico$FECHA_INGRESO_UCI)
 summary(Mexico$FECHA_INGRESO_UCI)
   Mexico$TIENE_INTUBACION_ENDOTRAQUEAL = as.factor(Mexico$TIENE_INTUBACION_ENDOTRAQUEAL)
   summary(Mexico$TIENE_INTUBACION_ENDOTRAQUEAL)
 
-classXXXV = filter(Mexico, TIPO_INFLUENZA_CONF1 %in% c(35))
+classXXXV = filter(Mexico, TIPO_INFLUENZA_CONF1 %in% c(35)) #
   classXXXV$MOTIVO_EGRESO = as.factor(classXXXV$MOTIVO_EGRESO)
   summary(classXXXV$MOTIVO_EGRESO)
 
@@ -161,3 +165,5 @@ subclass_egrepositivecas_2= filter(egrepositivecas, DOSIS_VAC_COVID19 %in% c(2))
   summary(subclass_DEADpositivecas_2$MARCA_VAC_COVID19)
   
   subclass_DEADpositivecas_2_Si = filter(subclass_DEADpositivecas_2, REF_VAC_COVID19 == "Si")
+  
+  
