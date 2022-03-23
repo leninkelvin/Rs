@@ -1,7 +1,7 @@
 ```mermaid
   graph TD;
-      Estructura-->B;
-      A-->C;
+      Receptor-->pdbqt;
+      Ligando-->pdbqt;
       B-->D;
       C-->D;
 ```
