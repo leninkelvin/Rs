@@ -1,6 +1,6 @@
 ```mermaid
   graph TD;
-      Estructura del receptor-->B;
+      Estructura-->B;
       A-->C;
       B-->D;
       C-->D;
