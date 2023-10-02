@@ -19,7 +19,7 @@ library(tidyverse)
 
 
 DateI = '2020-01-05' #
-DateF = '2022-03-13' #
+DateF = '2022-06-12' #
 
 # To extract POSITIVE cases we use CLASIFICACION_FINAL 1, 2, and 3
 casospos = filter(x, CLASIFICACION_FINAL %in% c(1,2,3))

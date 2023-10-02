@@ -21,20 +21,32 @@ library(pastecs) # for statistics extraction
 #cpC = filter(casospos, EDAD >= 40 & EDAD <= 59)
 #cpD = filter(casospos, EDAD >= 60)
 
+cpA_1 = filter(cpA, SEXO == 1)
+write.table(cpA_1, file = "PosCas0_19_H.csv", sep = "\t", row.names = F)
+
+cpA_2 = filter(cpA, SEXO == 2)
+write.table(cpA_2, file = "PosCas0_19_M.csv", sep = "\t", row.names = F)
+
 cpB_1 = filter(cpB, SEXO == 1)
-write.table(cpB_1, file = "PosCas20_39_H.cvs", sep = "\t", row.names = F)
+cpB_11 = filter(cpB_1, EDAD >= 20 & EDAD <= 29)
+cpB_12 = filter(cpB_1, EDAD >= 30 & EDAD <= 39)
+write.table(cpB_11, file = "PosCas20_29_H.csv", sep = "\t", row.names = F)
+write.table(cpB_12, file = "PosCas30_39_H.csv", sep = "\t", row.names = F)
 
 cpB_2 = filter(cpB, SEXO == 2)
-write.table(cpB_2, file = "PosCas20_39_M.cvs", sep = "\t", row.names = F)
+cpB_21 = filter(cpB_2, EDAD >= 20 & EDAD <= 29)
+cpB_22 = filter(cpB_2, EDAD >= 30 & EDAD <= 39)
+write.table(cpB_21, file = "PosCas20_29_M.csv", sep = "\t", row.names = F)
+write.table(cpB_22, file = "PosCas30_39_M.csv", sep = "\t", row.names = F)
 
 cpC_1 = filter(cpC, SEXO == 1)
-write.table(cpC_1, file = "PosCas40_59_H.cvs", sep = "\t", row.names = F)
+write.table(cpC_1, file = "PosCas40_59_H.csv", sep = "\t", row.names = F)
 
 cpC_2 = filter(cpC, SEXO == 2)
-write.table(cpC_2, file = "PosCas40_59_M.cvs", sep = "\t", row.names = F)
+write.table(cpC_2, file = "PosCas40_59_M.csv", sep = "\t", row.names = F)
 
 cpD_1 = filter(cpD, SEXO == 1)
-write.table(cpD_1, file = "PosCas60+_H.cvs", sep = "\t", row.names = F)
+write.table(cpD_1, file = "PosCas60+_H.csv", sep = "\t", row.names = F)
 
 cpD_2 = filter(cpD, SEXO == 2)
-write.table(cpD_2, file = "PosCas60+_M.cvs", sep = "\t", row.names = F)
+write.table(cpD_2, file = "PosCas60+_M.csv", sep = "\t", row.names = F)

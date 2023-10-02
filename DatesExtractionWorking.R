@@ -3,9 +3,9 @@
     # Started on the 20th August 2021.
     
     # update, without prompts for permission/clarification
-    update.packages(ask = FALSE)
+    #update.packages(ask = FALSE)
     
-    ptm <- proc.time() # Code to take the starting time of the process
+    #ptm <- proc.time() # Code to take the starting time of the process
     
     #required libraries, without these noting works. 
     
@@ -13,12 +13,31 @@
     library(ggplot2)
     library(lubridate)
     library(tidyverse)
+    #ibrary(plotrix)
+    #library(ggpubr)
+    #library(plyr)
+    #library(epiDisplay)
     #library(gganimate)
     #library(hrbrthemes)
     #library(gifski)
     
-    DateI = '2020-01-05' #
-    DateF = '2022-05-15' #
+    DateI = '2020-01-05' # Primera ola
+    #DateF = '2020-09-13' # Primera ola 
+    
+    #DateI = '2020-09-20' # Segunda ola
+    #DateF = '2021-05-09' # Segunda ola 
+    
+    #DateI = '2021-05-16' # Tercera ola
+    #DateF = '2021-11-14' # Terceraa ola 
+    
+    #DateI = '2021-11-21' # Cuarta ola
+    #DateF = '2022-05-24' # Cuarta ola 
+            
+    #DateI = '2022-04-24' # Quinta ola
+    #DateF = '2022-06-12' # Quinta ola 
+    
+    #DateI = '2022-01-02' # 2020-01-05
+    DateF = '2023-08-29' #
     
     # To extract POSITIVE cases we use CLASIFICACION_FINAL 1, 2, and 3
     casospos = filter(x, CLASIFICACION_FINAL %in% c(1,2,3))
@@ -126,6 +145,8 @@
     cpC = filter(casospos, EDAD >= 40 & EDAD <= 59)
     cpD = filter(casospos, EDAD >= 60)
     
+   
+    
     cpE = filter(casospos, EDAD <= 13)
     cpF = filter(casospos, EDAD >= 14 & EDAD <= 17)
     cpG = filter(casospos, EDAD >= 18 & EDAD <= 39)
@@ -231,7 +252,6 @@
     wI_hB = hB %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
     wI_hC = hC %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
     wI_hD = hD %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
-    
     wI_hE = hE %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
     wI_hF = hF %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
     wI_hG = hG %>% filter(FECHA_SINTOMAS <= as.Date(DateN) & FECHA_SINTOMAS >= as.Date(DateI))
@@ -405,6 +425,8 @@
     #ggplot(muertes, aes(x=InicioSint, y=C)) + geom_bar(stat = "identity") 
     #ggplot(muertes, aes(x=InicioSint, y=D)) + geom_bar(stat = "identity")
     
-    proc.time() - ptm # Code to get the final time of the process and display the total time.
+    #proc.time() - ptm # Code to get the final time of the process and display the total time.
     
-    system("say Just finished!")
+    #system("say Just finished!")
+    
+    system("/opt/prowl.pl -apikey='ad2679e9bb3530588a9961c3d989d73d790b7f98' -application='prowl.pl' -event='Notification' -notification='RSTUDIO is done @ AXOLOTL'", intern = TRUE)
